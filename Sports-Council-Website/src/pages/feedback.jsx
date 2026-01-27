@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import clubs from './Clubsdata.json'
 
 export default function Feedback() {
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
@@ -58,10 +59,9 @@ export default function Feedback() {
               name="sport"
               className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200"
             >
-              <option value="football">Football</option>
-              <option value="basketball">Basketball</option>
-              <option value="cricket">Cricket</option>
-              <option value="badminton">Badminton</option>
+            { clubs.map((club,index)=>(
+              <option value={club.name} key={index}>{club.name}</option>)) }
+
             </select>
           </div>
 
