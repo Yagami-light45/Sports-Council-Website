@@ -14,6 +14,7 @@ import ClubDetail from './pages/ClubDetail'
 import EventDetail from './pages/EventDetail'
 import Staff from './pages/Staff'
 import ClubsGallery from './pages/ClubAndSocities'
+import Feedback from './pages/feedback'
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
             <Route path="/clubsAndSocieties/:clubname" element={<ClubDetail/>} />
             <Route path='/gallery' element={<Gallery/>}/>
             <Route path='/contact' element={<Contact/>}/>
+            <Route path='/feedback' element={<Feedback/>}/>
           </Routes>
           <Footer/>
         </DisplayProvider>
