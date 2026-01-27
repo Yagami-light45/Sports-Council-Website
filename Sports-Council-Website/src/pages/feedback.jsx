@@ -36,7 +36,7 @@ export default function Feedback() {
         {/* Header */}
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-gray-800">Feedback Form</h2>
-          <p className="text-gray-500 mt-2">Data will be saved to Excel and emailed to Admin.</p>
+         
         </div>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
@@ -103,7 +103,7 @@ export default function Feedback() {
           {/* Success/Error Feedback */}
           {status === 'success' && (
             <div className="p-3 bg-green-100 text-green-700 rounded-lg text-center font-medium animate-pulse">
-              ✓ Successfully saved to Sheet & Email sent!
+              ✓ Successful!
             </div>
           )}
           {status === 'error' && (
