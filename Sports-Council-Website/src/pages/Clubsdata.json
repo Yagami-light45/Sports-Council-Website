@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "name": "Aquatics",
+    "description": "Swimming Pool is open. Entry to the pool will be done on membership basis.",
+    "membership": "Membership basis",
+    "status": "Open",
+    "action": "Download membership form"
+  },
+  {
+    "id": 2,
+    "name": "Athletics",
+    "description": "Promoting physical fitness and healthy competition through running, jumping, and throwing. Open to all skill levels from UG to PhD.",
+    "membership": "Open to all students",
+    "status": "Active"
+  },
+  {
+    "id": 3,
+    "name": "Badminton",
+    "description": "Student-run group focused on regular training sessions, tournaments, and inter-college competitions like Inter IIT.",
+    "membership": "Member access to equipment",
+    "status": "Active"
+  },
+  {
+    "id": 4,
+    "name": "Basketball",
+    "description": "Prominent club with active Girls and Boys teams. Welcomes beginners and encourages new talent.",
+    "membership": "Open to all",
+    "status": "Active"
+  },
+  {
+    "id": 5,
+    "name": "Cricket",
+    "description": "Professional level facilities and quality coaching to nourish talent. Participation in professional tournaments.",
+    "membership": "Professional training",
+    "status": "Active"
+  },
+  {
+    "id": 6,
+    "name": "Chess",
+    "description": "Focuses on strategic play and mastering objectives like checkmate and avoiding stalemate.",
+    "membership": "Open to all",
+    "status": "Active"
+  },
+  {
+    "id": 7,
+    "name": "Football",
+    "description": "Led by Harsh Wardhan and coached by Mr. Vishal Pillai. High participation across all student levels and faculty.",
+    "membership": "Open to all",
+    "status": "Active"
+  },
+  {
+    "id": 8,
+    "name": "Hockey",
+    "description": "Details will be uploaded soon.",
+    "membership": "TBD",
+    "status": "Coming Soon"
+  },
+  {
+    "id": 9,
+    "name": "Tennis",
+    "description": "Focuses on developing stamina, speed, agility, and the dynamic balance between body, ball, and racket.",
+    "membership": "Skill development",
+    "status": "Active"
+  },
+  {
+    "id": 10,
+    "name": "Squash",
+    "description": "Details will be uploaded soon.",
+    "membership": "TBD",
+    "status": "Coming Soon"
+  },
+  {
+    "id": 11,
+    "name": "Table Tennis",
+    "description": "Inducts players based on exceptional talent and dedication. Offers friendly matches and professional coaching.",
+    "membership": "Induction based",
+    "status": "Active"
+  },
+  {
+    "id": 12,
+    "name": "Volleyball",
+    "description": "Develops competency in basic skills like forearm pass, overhead pass, attack, and game strategies.",
+    "membership": "Skill-based learning",
+    "status": "Active"
+  },
+  {
+    "id": 13,
+    "name": "Gym",
+    "description": "Learn techniques for weight-loss, muscle building, and heart health to meet sports performance goals.",
+    "membership": "Open access",
+    "status": "Open"
+  },
+  {
+    "id": 14,
+    "name": "Yoga",
+    "description": "Aims for physical health, mental hygiene, emotional stability, and higher levels of consciousness.",
+    "membership": "Open to all",
+    "status": "Active"
+  }
+]

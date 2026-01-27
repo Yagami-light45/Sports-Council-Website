@@ -1,44 +1,25 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import DisplayContext from '../context/DisplayContext';
+import clubs from './Clubsdata.json';
 
-export default function ClubAndSocieties() {
-  const { clubs, getClubs } = useContext(DisplayContext);
-  
-  useEffect(() => {
-    getClubs();
-  }, []);
-  
+export default function ClubsGallery () {
   return (
-    <div className='pt-[75px] w-full h-max flex flex-col items-center px-5'>
-      <div className='w-full max-w-6xl flex flex-col justify-center items-center py-10'>
-        
-        {/* Page Title */}
-        <h1 className="text-3xl md:text-4xl font-semibold text-center mb-10">Our Clubs & Societies</h1>
-
-        {/* Clubs Grid */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 w-full'>
-          {clubs && clubs.length > 0 ? (
-            clubs.map((club) => (
-              <Link 
-                key={club.id} 
-                to={`/clubsAndSocieties/${club.id}`} 
-                className="border p-4 flex flex-col items-center border-black shadow-md hover:shadow-2xl transition-all duration-300 rounded-lg"
-              >
-                <img 
-                  src={`${club.Club_logo}`} 
-                  alt={club.Title} 
-                  className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto m-5 p-4"
-                />
-                <h2 className="text-2xl md:text-3xl font-semibold text-center">{club.Club_Name}</h2>
-              </Link>
-            ))
-          ) : (
-            <div className="text-lg font-semibold text-center">Loading...</div>
-          )}
-        </div>
-
+    <div style={{ backgroundColor: '#f2f2f200', color: 'white', padding: '40px' }}>
+      <h1 style={{ textAlign: 'center', fontSize: '3rem', color: '#4cc9f0' }}>Sports</h1>
+      <p style={{ textAlign: 'center' }}>Welcome to the Sports page! Explore our clubs at IIT Indore.</p>
+      
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px', marginTop: '40px' }}>
+        {clubs.map((club) => (
+          <Link to={`/clubsAndSocieties/${club.name}`} key={club.id} style={{ textDecoration: 'none' }}>
+            <div className="club-card" style={{ background: '#6b717c', borderRadius: '15px', overflow: 'hidden' }}>
+              {club.image?(<img src={club.image} alt={club.name} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />):(<img src="https://imgs.search.brave.com/IwVBQDwOl6ndfg_gEt79gTw0Oza_V68JpuFgCUh8BFI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA4LzA1LzIzLzc4/LzM2MF9GXzgwNTIz/NzgwMV8xYm5oYkZ2/aWl6VVJkSUVGeVRX/NWlDaEFia0k1Y1Vu/WS5qcGc" alt={club.name} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />)}
+              <div style={{ padding: '15px', textAlign: 'center', color: 'white' }}>
+                <h3>{club.name}</h3>
+              </div>
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   );
-}
+};
