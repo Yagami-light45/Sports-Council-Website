@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import clubs from './Clubsdata.json'
 
 export default function Feedback() {
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
@@ -29,62 +30,62 @@ export default function Feedback() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-[80vh] bg-gray-50 py-12 px-4 font-poppins">
-      <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+    <div className="flex items-center justify-center min-h-[80vh] bg-white py-12 px-4 font-poppins">
+      <div className="max-w-md w-full bg-white rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] p-8 border border-gray-50">
         
         {/* Header */}
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-800">Feedback Form</h2>
-          <p className="text-gray-500 mt-2">Data will be saved to Excel and emailed to Admin.</p>
+          <h2 className="text-3xl font-black text-[#1a1c24]">
+            Feedback <span className="text-[#00a896]">Form</span>
+          </h2>
+          <div className="w-12 h-1 bg-[#00a896] mx-auto mt-2 rounded-full"></div>
         </div>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           {/* Name Field */}
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">Full Name</label>
+            <label className="block text-sm font-bold text-[#1a1c24] mb-2 uppercase tracking-wide">Full Name</label>
             <input 
               type="text" 
               name="name" 
               placeholder="Enter your name" 
               required
-              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200"
+              className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-[#00a896] focus:ring-4 focus:ring-[#00a896]/10 outline-none transition-all duration-200"
             />
           </div>
 
           {/* Sport Selection */}
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">Select Sport</label>
+            <label className="block text-sm font-bold text-[#1a1c24] mb-2 uppercase tracking-wide">Select Sport</label>
             <select 
               name="sport"
-              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200"
+              className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-[#00a896] focus:ring-4 focus:ring-[#00a896]/10 outline-none transition-all duration-200 appearance-none cursor-pointer"
             >
-              <option value="football">Football</option>
-              <option value="basketball">Basketball</option>
-              <option value="cricket">Cricket</option>
-              <option value="badminton">Badminton</option>
+            { clubs.map((club,index)=>(
+              <option value={club.name} key={index}>{club.name}</option>)) }
             </select>
           </div>
 
           {/* Summary Field */}
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">Short Summary</label>
+            <label className="block text-sm font-bold text-[#1a1c24] mb-2 uppercase tracking-wide">Short Summary</label>
             <input 
               type="text" 
               name="summary" 
               placeholder="One line description" 
               required
-              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200"
+              className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-[#00a896] focus:ring-4 focus:ring-[#00a896]/10 outline-none transition-all duration-200"
             />
           </div>
 
           {/* Details Field */}
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">Detailed Description</label>
+            <label className="block text-sm font-bold text-[#1a1c24] mb-2 uppercase tracking-wide">Detailed Description</label>
             <textarea 
               name="details" 
               rows="4"
               placeholder="Tell us more..." 
-              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200 resize-none"
+              className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-[#00a896] focus:ring-4 focus:ring-[#00a896]/10 outline-none transition-all duration-200 resize-none"
             ></textarea>
           </div>
 
@@ -92,22 +93,22 @@ export default function Feedback() {
           <button 
             type="submit" 
             disabled={status === 'loading'}
-            className={`w-full font-bold py-3 rounded-lg shadow-lg transition-all duration-300 transform 
+            className={`w-full font-black py-4 rounded-xl shadow-lg transition-all duration-300 transform uppercase tracking-widest text-sm
               ${status === 'loading' 
-                ? 'bg-gray-400 cursor-not-allowed' 
-                : 'bg-blue-500 hover:bg-blue-600 text-white hover:-translate-y-1 active:scale-95'}`}
+                ? 'bg-gray-300 cursor-not-allowed text-gray-500' 
+                : 'bg-[#1a1c24] hover:bg-[#00a896] text-white hover:-translate-y-1 active:scale-95'}`}
           >
             {status === 'loading' ? 'Submitting...' : 'Submit to Admin'}
           </button>
 
           {/* Success/Error Feedback */}
           {status === 'success' && (
-            <div className="p-3 bg-green-100 text-green-700 rounded-lg text-center font-medium animate-pulse">
-              ✓ Successfully saved to Sheet & Email sent!
+            <div className="p-4 bg-[#f0fdfa] text-[#00a896] border border-[#00a896]/20 rounded-xl text-center font-bold animate-bounce">
+              ✓ Message Sent Successfully!
             </div>
           )}
           {status === 'error' && (
-            <div className="p-3 bg-red-100 text-red-700 rounded-lg text-center font-medium">
+            <div className="p-4 bg-red-50 text-red-600 border border-red-100 rounded-xl text-center font-bold">
               × Failed to send. Please check your connection.
             </div>
           )}
