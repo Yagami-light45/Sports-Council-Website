@@ -4,7 +4,6 @@ import clubs from "./Clubsdata.json";
 
 export default function ClubDetail() {
   const { clubname } = useParams();
-  // Find the specific club data based on the URL path
   const club = clubs.find((c) => c.name === clubname);
 
   if (!club)
@@ -16,31 +15,67 @@ export default function ClubDetail() {
 
   return (
     <div className="pt-28 pb-16 px-4 md:px-10 min-h-screen font-poppins bg-white flex flex-col items-center">
-      {/* Container for content width control */}
       <div className="max-w-4xl w-full bg-white p-8 md:p-12 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-50">
-        {/* Heading using the Navy (#1a1c24) and Teal (#00a896) from the image */}
+        
+        {/* Header */}
         <h1 className="text-4xl md:text-5xl font-black text-[#1a1c24] mb-8 text-center leading-tight">
           {club.name} <span className="text-[#00a896]">Excellence</span>
         </h1>
 
+        {/* Hero Image */}
         <div className="flex justify-center">
           <img
-            src={
-              club.image ||
-              "https://imgs.search.brave.com/IwVBQDwOl6ndfg_gEt79gTw0Oza_V68JpuFgCUh8BFI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA4LzA1LzIzLzc4/LzM2MF9GXzgwNTIz/NzgwMV8xYm5oYkZ2/aWl6VVJkSUVGeVRX/NWlDaEFia0k1Y1Vu/WS5qcGc"
-            }
+            src={club.image || "https://via.placeholder.com/800x400"}
             alt={club.name}
-            className="w-full max-w-2xl h-auto object-cover rounded-2xl shadow-md transform hover:scale-[1.01] transition-transform duration-500 border-b-4 border-[#00a896]"
+            className="w-full max-w-2xl h-auto object-cover rounded-2xl shadow-md border-b-4 border-[#00a896]"
           />
         </div>
 
+        {/* Description */}
         <div className="mt-10">
           <p className="text-lg md:text-xl text-[#4a5568] leading-relaxed text-justify">
             {club.description}
           </p>
         </div>
 
-        {/* Placeholder for additional details using the theme colors */}
+        <hr className="my-12 border-gray-100" />
+
+        {/* Club Head Section */}
+        <div className="mb-16">
+          <h3 className="text-center text-xs font-black uppercase tracking-[0.3em] text-[#00a896] mb-8">Club Leadership</h3>
+          <div className="flex flex-col items-center">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-[#00a896] rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+              <img 
+                src={club.head?.photo || "https://via.placeholder.com/150"} 
+                alt={club.head?.name} 
+                className="relative w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg"
+              />
+            </div>
+            <h4 className="mt-4 text-2xl font-black text-[#1a1c24]">{club.head?.name || "Lead Name"}</h4>
+            <p className="text-[#00a896] font-bold uppercase tracking-widest text-sm">Club Head</p>
+          </div>
+        </div>
+
+        {/* Members Grid */}
+        <div className="mb-12">
+          <h3 className="text-center text-xs font-black uppercase tracking-[0.3em] text-[#00a896] mb-8">Core Members</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+            {club.members?.map((member, index) => (
+              <div key={index} className="flex flex-col items-center group">
+                <img 
+                  src={member.photo || "https://via.placeholder.com/100"} 
+                  alt={member.name} 
+                  className="w-20 h-20 rounded-full object-cover border-2 border-gray-100 group-hover:border-[#00a896] transition-colors duration-300 shadow-sm"
+                />
+                <p className="mt-3 font-bold text-[#1a1c24] text-center leading-tight">{member.name}</p>
+                <p className="text-[10px] text-gray-400 font-bold uppercase tracking-tighter mt-1">{member.role || "Member"}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Footer Badges */}
         <div className="mt-10 pt-8 border-t border-gray-100 flex flex-wrap justify-center gap-4">
           <span className="px-6 py-2 bg-[#1a1c24] text-white rounded-full font-bold text-sm tracking-wide">
             Active Club

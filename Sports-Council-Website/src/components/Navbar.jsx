@@ -1,77 +1,49 @@
+import React from 'react';
 import { useEffect, useState, useRef } from 'react';
 import sports_logo from '/src/images/sports_logo.jpeg';
-import { Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 
-export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const dropdownRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const handleDropdownFocus = () => {
-    setDropdownOpen(true);
-  };
-
-  const handleDropdownBlur = (event) => {
-    if (!dropdownRef.current.contains(event.relatedTarget)) {
-      setDropdownOpen(false);
-    }
-  };
-
+const Navbar = () => {
+  const navLinks = ['Home', 'Facilities', 'Events', 'Team','Staff', 'Clubs', 'Gallery', 'Contact'];
+ const [menuOpen,setMenuOpen]=useState(false);
   return (
-    <div className={`${isScrolled ? 'bg-blue-400 text-white' : 'bg-blue-300 bg-opacity-0'} p-2 flex justify-between items-center fixed w-screen h-18 transition-all duration-300 z-50`}>
-      <div className='flex items-center'>
-        <img src={sports_logo} alt="Logo" width={60} />
-      </div>
-      
-      {/* Desktop Menu */}
-      <div className='hidden md:flex'>
-        <Link to={'/'} className='p-2 mx-5 text-xl font-bold'>Home</Link>
-        <Link to={'/facilities'} className='p-2 mx-5 text-xl font-bold'>Facilities</Link>
-        <Link to={'/events'} className='p-2 mx-5 text-xl font-bold'>Events</Link>
+    <header className="bg-white py-4 px-6 md:px-12 flex items-center justify-between shadow-sm border-b border-gray-100">
+      <img src={sports_logo} alt="Logo" width={60} />
+      <div className="flex items-center space-x-2">
         
-        {/* Dropdown for People */}
-        <div
-          className='relative p-2 mx-5 text-xl font-bold'
-          onFocus={handleDropdownFocus}
-          onBlur={handleDropdownBlur}
-          tabIndex="0"
-          ref={dropdownRef}
-        >
-          <div className='cursor-pointer'>People</div>
-          {dropdownOpen && (
-            <div className='absolute top-full mt-2 bg-white shadow-xl rounded-lg w-40'>
-              <Link to={'/staff'} className='block px-5 p-3 hover:bg-gray-200 text-black font-semibold rounded-t-md'>Staff</Link>
-              <Link to={'/team'} className='block px-5 p-3 hover:bg-gray-200 text-black font-semibold rounded-b-md'>Team</Link>
-            </div>
-          )}
+        <div className="bg-sport-teal p-1.5 rounded text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5" />
+            </svg>
         </div>
-
-        <Link to={'/clubsAndSocities'} className='p-2 mx-5 text-xl font-bold'>Clubs</Link>
-        <Link to={'/gallery'} className='p-2 mx-5 text-xl font-bold'>Gallery</Link>
-        <Link to={'/contact'} className='p-2 mx-5 text-xl font-bold'>Contact</Link>
+        <h1 className="text-xl font-bold text-sport-teal">
+          IIT Indore Sports Council
+        </h1>
       </div>
-      
-      {/* Mobile Menu Button */}
-      <div className='md:hidden flex items-center'>
-        <button onClick={() => setMenuOpen(!menuOpen)} className='text-black text-3xl focus:outline-none'>
-          {menuOpen ? <FiX /> : <FiMenu />}
+
+      {/* Navigation Links (Desktop) */}
+      <nav className="hidden md:block">
+        <ul className="flex space-x-8 text-gray-600 font-medium">
+          {navLinks.map((link, index) => (
+            <li key={index}>
+              <a href={`/${link.toLowerCase()}`} className="hover:text-sport-teal 
+              hover:opacity-50 active:opacity-50 transition-all duration-200">
+                {link}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* Mobile Menu Button (Hidden on desktop) */}
+      <div className="md:hidden">
+        <button className="text-gray-600 hover:opacity-70 active:opacity-50 transition-all duration-200" onClick={() => setMenuOpen(!menuOpen)}>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
         </button>
       </div>
-
-      {/* Mobile Menu */}
-      {menuOpen && (
+       {menuOpen && (
         <div className='fixed top-0 left-0 w-full h-full bg-blue-400 text-white flex flex-col items-center justify-center md:hidden z-40'>
           <button onClick={() => setMenuOpen(false)} className='absolute top-5 right-5 text-3xl'>
             <FiX />
@@ -86,6 +58,11 @@ export default function Navbar() {
           <Link to={'/contact'} className='p-4 text-xl' onClick={() => setMenuOpen(false)}>Contact</Link>
         </div>
       )}
-    </div>
+
+      
+        
+    </header>
   );
-}
+};
+
+export default Navbar;

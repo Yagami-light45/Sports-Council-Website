@@ -26,13 +26,14 @@ function App() {
           <Navbar/>
           <Routes>
             <Route path='/' element={<Home/>}/>
+            <Route path='/home' element={<Home/>}/>
             <Route path='/facilities' element={<Facilities/>}/>
             <Route path='/events' element={<Events/>}/>
             <Route path='/events/:id' element={<EventDetail/>}/>
             <Route path='/team' element={<Team/>}/>
             <Route path='/staff' element={<Staff/>}/>
-            <Route path='/clubsAndSocities' element={<ClubsGallery/>}/>
-            <Route path="/clubsAndSocieties/:clubname" element={<ClubDetail/>} />
+            <Route path='/clubs' element={<ClubsGallery/>}/>
+            <Route path="/clubs/:clubname" element={<ClubDetail/>} />
             <Route path='/gallery' element={<Gallery/>}/>
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/feedback' element={<Feedback/>}/>
