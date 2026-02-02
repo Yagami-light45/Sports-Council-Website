@@ -2,9 +2,11 @@ import './App.css'
 import Navbar from './components/Navbar'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Home from './pages/Home'
-import Facilities from './pages/Facilities'
+
 import Events from './pages/Events'
 import Team from './pages/Team'
+import TeamMembers from './pages/TeamMembers'
+import Details from './pages/Details'
 
 import Gallery from './pages/Gallery'
 import Contact from './pages/contact'
@@ -15,6 +17,8 @@ import EventDetail from './pages/EventDetail'
 import Staff from './pages/Staff'
 import ClubsGallery from './pages/ClubAndSocities'
 import Feedback from './pages/feedback'
+import Members from './pages/Members'
+import GallerytData from './pages/GalleryData'
 
 
 function App() {
@@ -27,7 +31,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/home' element={<Home/>}/>
-            <Route path='/facilities' element={<Facilities/>}/>
+          
             <Route path='/events' element={<Events/>}/>
             <Route path='/events/:id' element={<EventDetail/>}/>
             <Route path='/team' element={<Team/>}/>
@@ -37,6 +41,10 @@ function App() {
             <Route path='/gallery' element={<Gallery/>}/>
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/feedback' element={<Feedback/>}/>
+            <Route path='/teamMembers' element={<TeamMembers/>} />
+            <Route path='/Details' element={<Details/>} />
+            <Route path='/Members' element={<Members/>} />
+            <Route path='/GallerytData' element={<GallerytData/>} />
           </Routes>
           <Footer/>
         </DisplayProvider>

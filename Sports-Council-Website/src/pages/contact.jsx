@@ -1,103 +1,179 @@
-import DisplayContext from '../context/DisplayContext'
-import { useContext } from 'react'
+import React, { useState, useContext } from 'react';
+import DisplayContext from '../context/DisplayContext';
 import ThankYouPopup from './ThankYouPopup';
-import { useState } from 'react';
+import clubs from './Clubsdata.json';
 
 export default function Contact() {
   const { SaveMessage } = useContext(DisplayContext);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  
+  const [loading, setLoading] = useState(false);
+
   const handleFormSubmit = async (e) => {
-    await SaveMessage(e); 
+    e.preventDefault();
+    setLoading(true);
+    
+    // Simulate network request or use actual context function
+    await SaveMessage(e);
+    
+    setLoading(false);
     setIsPopupOpen(true);
+    e.target.reset();
   };
 
   return (
-    // 1. Page Background updated to Mint (#f0fdfa)
-    <div className='pt-[100px] w-full p-5 sm:p-20 bg-[#f0fdfa] min-h-screen'>
-      <div className='w-full h-full flex justify-center'>
+    <div className="relative min-h-screen bg-white font-poppins selection:bg-[#00a896] selection:text-white overflow-hidden flex items-center justify-center py-24 px-4">
+      
+      {/* 🔹 DECORATIVE BACKGROUND BLUR */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#00a896] opacity-10 blur-[120px] rounded-full pointer-events-none"></div>
+
+      <div className="relative z-10 w-full max-w-4xl">
         
-        {/* 2. Main Container updated to White with softer border/shadow */}
-        <div className='w-full max-w-6xl border border-gray-100 rounded-2xl flex flex-col items-center justify-center p-8 sm:p-16 shadow-xl bg-white'>
+        {/* 🔹 HEADER SECTION */}
+        <div className="text-center mb-12">
+            <span className="text-[#00a896] text-xs font-black uppercase tracking-[0.3em] block mb-3">
+              Get In Touch
+            </span>
+            <h1 className="text-4xl md:text-6xl font-black text-[#1a1c24] leading-none mb-6 tracking-tight">
+              Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00a896] to-[#017a6c]">& Feedback</span>
+            </h1>
+            <div className="w-20 h-1.5 bg-[#1a1c24] mx-auto rounded-full"></div>
+        </div>
 
-          {/* Contact Header */}
-          <h2 className='text-3xl md:text-4xl font-bold p-5 text-center text-gray-900'>Contact Us</h2>
-          <p className='text-center text-gray-600 px-5'>Feel free to contact us! Submit your queries here, we will listen.</p>
-
-          {/* Contact Options */}
-          <div className='flex flex-wrap md:flex-nowrap justify-center gap-6 w-full mt-12'>
-
-            {/* Phone Contact Card - Updated to Teal (#009ca6) */}
-            <div className='bg-[#009ca6] p-8 rounded-2xl flex flex-col justify-between items-start h-[220px] w-full md:w-[360px] shadow-md hover:-translate-y-1 transition-transform duration-300'>
-              <div>
-                <p className='text-white text-md my-1 opacity-90'>Call Us Directly At</p>
-                <p className='text-white text-2xl my-1 font-bold'>+91 123 4567 890</p>
-              </div>
-              <button className='text-[#009ca6] font-bold text-md px-4 py-3 bg-white rounded-lg w-full text-center hover:bg-gray-50 transition-colors'>Contact Us</button>
+        {/* 🔹 MAIN CARD */}
+        <div className="bg-white rounded-[2.5rem] shadow-[0_30px_60px_rgba(0,0,0,0.08)] border border-gray-100 p-8 md:p-12 relative overflow-hidden">
+          
+          {/* Top Contact Info Bar (Replaces the black sidebar) */}
+          <div className="flex flex-col md:flex-row items-center justify-between bg-gray-50 rounded-2xl p-6 mb-10 border border-gray-100">
+            <div className="flex items-center gap-4 mb-4 md:mb-0">
+               <div className="w-12 h-12 rounded-full bg-[#e6f6f4] flex items-center justify-center text-[#00a896]">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+               </div>
+               <div>
+                 <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Email Us</p>
+                 <p className="text-[#1a1c24] font-bold text-lg">gs.sports@iiti.ac.in</p>
+               </div>
             </div>
-
-            {/* Email Contact Card - Updated to Teal (#009ca6) for consistency */}
-            <div className='bg-[#009ca6] p-8 rounded-2xl flex flex-col justify-between items-start h-[220px] w-full md:w-[360px] shadow-md hover:-translate-y-1 transition-transform duration-300'>
-              <div>
-                <p className='text-white text-md my-1 opacity-90'>Chat with our team</p>
-                <p className='text-white text-2xl my-1 font-bold'>gs.sports@iiti.ac.in</p>
-              </div>
-              <button className='text-[#009ca6] font-bold text-md px-4 py-3 bg-white rounded-lg w-full text-center hover:bg-gray-50 transition-colors'>Contact Us</button>
+            <div className="text-right hidden md:block">
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">IITI Sports Council</p>
+              <p className="text-[#00a896] font-bold text-sm">We listen to your voice</p>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <form onSubmit={handleFormSubmit} className='flex flex-col w-full md:w-[600px] mt-12 gap-6'>
-            <input 
-              type="text" 
-              name="name" 
-              id="name" 
-              className="bg-gray-50 border border-gray-200 text-gray-900 sm:text-sm rounded-lg focus:ring-[#009ca6] focus:border-[#009ca6] focus:outline-none block w-full p-4 transition-all" 
-              placeholder="Name" 
-              required 
-            />
+          <form onSubmit={handleFormSubmit} className="flex flex-col gap-8">
             
-            <div className='flex flex-col md:flex-row gap-6'>
+            {/* Row 1: Name & Email */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="group">
+                <label className="block text-xs font-bold text-[#1a1c24] mb-2 uppercase tracking-widest group-focus-within:text-[#00a896] transition-colors">
+                  Full Name
+                </label>
+                <input 
+                  type="text" 
+                  name="name" 
+                  placeholder="Enter your name" 
+                  required
+                  className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-100 text-[#1a1c24] placeholder-gray-400 font-medium focus:bg-white focus:border-[#00a896] focus:ring-4 focus:ring-[#00a896]/10 outline-none transition-all duration-300"
+                />
+              </div>
+
+              <div className="group">
+                <label className="block text-xs font-bold text-[#1a1c24] mb-2 uppercase tracking-widest group-focus-within:text-[#00a896] transition-colors">
+                  Email Address
+                </label>
+                <input 
+                  type="email" 
+                  name="email" 
+                  placeholder="john@example.com" 
+                  required
+                  className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-100 text-[#1a1c24] placeholder-gray-400 font-medium focus:bg-white focus:border-[#00a896] focus:ring-4 focus:ring-[#00a896]/10 outline-none transition-all duration-300"
+                />
+              </div>
+            </div>
+
+            {/* Row 2: Phone & Sport Selection */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="group">
+                <label className="block text-xs font-bold text-[#1a1c24] mb-2 uppercase tracking-widest group-focus-within:text-[#00a896] transition-colors">
+                  Phone Number
+                </label>
+                <input 
+                  type="number" 
+                  name="phone" 
+                  placeholder="+91 98765..." 
+                  required
+                  className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-100 text-[#1a1c24] placeholder-gray-400 font-medium focus:bg-white focus:border-[#00a896] focus:ring-4 focus:ring-[#00a896]/10 outline-none transition-all duration-300"
+                />
+              </div>
+
+              <div className="group">
+                <label className="block text-xs font-bold text-[#1a1c24] mb-2 uppercase tracking-widest group-focus-within:text-[#00a896] transition-colors">
+                  Select Sport / Topic
+                </label>
+                <div className="relative">
+                  <select 
+                    name="sport"
+                    className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-100 text-[#1a1c24] font-medium focus:bg-white focus:border-[#00a896] focus:ring-4 focus:ring-[#00a896]/10 outline-none transition-all duration-300 appearance-none cursor-pointer"
+                  >
+                    <option value="General Query">General Query</option>
+                    {clubs && clubs.map((club, index) => (
+                      <option value={club.name} key={index}>{club.name}</option>
+                    ))}
+                  </select>
+                  {/* Custom Arrow Icon */}
+                  <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Row 3: Short Summary */}
+            <div className="group">
+              <label className="block text-xs font-bold text-[#1a1c24] mb-2 uppercase tracking-widest group-focus-within:text-[#00a896] transition-colors">
+                Short Summary
+              </label>
               <input 
-                type="email" 
-                name="email" 
-                id="email" 
-                className="bg-gray-50 border border-gray-200 text-gray-900 sm:text-sm rounded-lg focus:ring-[#009ca6] focus:border-[#009ca6] focus:outline-none block w-full md:w-1/2 p-4 transition-all" 
-                placeholder="Email" 
-                required 
-              />
-              <input 
-                type="number" 
-                name="phone" 
-                id="phone" 
-                className="bg-gray-50 border border-gray-200 text-gray-900 sm:text-sm rounded-lg focus:ring-[#009ca6] focus:border-[#009ca6] focus:outline-none block w-full md:w-1/2 p-4 transition-all" 
-                placeholder="Phone Number" 
-                required 
+                type="text" 
+                name="summary" 
+                placeholder="One line description of your query" 
+                required
+                className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-100 text-[#1a1c24] placeholder-gray-400 font-medium focus:bg-white focus:border-[#00a896] focus:ring-4 focus:ring-[#00a896]/10 outline-none transition-all duration-300"
               />
             </div>
 
-            <textarea 
-              id="message" 
-              name='message' 
-              rows="6" 
-              className="bg-gray-50 border border-gray-200 text-gray-900 sm:text-sm rounded-lg focus:ring-[#009ca6] focus:border-[#009ca6] focus:outline-none block w-full p-4 transition-all" 
-              placeholder="Message Here..."
-            ></textarea>
-            
+            {/* Row 4: Detailed Description */}
+            <div className="group">
+              <label className="block text-xs font-bold text-[#1a1c24] mb-2 uppercase tracking-widest group-focus-within:text-[#00a896] transition-colors">
+                Detailed Description
+              </label>
+              <textarea 
+                name="details" 
+                rows="5"
+                placeholder="Tell us more..." 
+                className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-100 text-[#1a1c24] placeholder-gray-400 font-medium focus:bg-white focus:border-[#00a896] focus:ring-4 focus:ring-[#00a896]/10 outline-none transition-all duration-300 resize-none"
+              ></textarea>
+            </div>
+
+            {/* Submit Button */}
             <button 
               type="submit" 
-              className='w-full bg-[#009ca6] text-white font-bold py-4 rounded-lg hover:bg-[#007c85] transition-all duration-300 shadow-md'
+              disabled={loading}
+              className={`w-full font-black py-4 rounded-xl shadow-lg transition-all duration-300 transform uppercase tracking-[0.2em] text-xs mt-2
+                ${loading 
+                  ? 'bg-gray-200 cursor-not-allowed text-gray-400 shadow-none' 
+                  : 'bg-[#1a1c24] hover:bg-[#00a896] text-white hover:shadow-[#00a896]/30 hover:-translate-y-1 active:scale-95'}`}
             >
-              Send Message
+              {loading ? 'Sending...' : 'Submit Message'}
             </button>
           </form>
-
         </div>
       </div>
+
+      {/* Popup Component */}
       <ThankYouPopup 
         isOpen={isPopupOpen} 
         onClose={() => setIsPopupOpen(false)} 
       />
     </div>
-  )
+  );
 }
