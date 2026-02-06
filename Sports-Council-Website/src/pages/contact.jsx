@@ -97,7 +97,7 @@ export default function Contact() {
                   Phone Number
                 </label>
                 <input 
-                  type="number" 
+                  type="text" 
                   name="phone" 
                   placeholder="+91 98765..." 
                   required
