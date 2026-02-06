@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState, useRef } from 'react';
 import sports_logo from '/src/images/sports_logo.jpeg';
 import { FiMenu, FiX } from 'react-icons/fi';
+import {Link} from 'react-router-dom'
 
 const Navbar = () => {
   const navLinks = ['Home', 'Facilities', 'Events', 'Team','Staff', 'Clubs', 'Gallery', 'Contact'];
@@ -43,24 +44,51 @@ const Navbar = () => {
             </svg>
         </button>
       </div>
-       {menuOpen && (
-        <div className='fixed top-0 left-0 w-full h-full bg-blue-400 text-white flex flex-col items-center justify-center md:hidden z-40'>
-          <button onClick={() => setMenuOpen(false)} className='absolute top-5 right-5 text-3xl'>
-            <FiX />
-          </button>
-          <Link to={'/'} className='p-4 text-xl' onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to={'/facilities'} className='p-4 text-xl' onClick={() => setMenuOpen(false)}>Facilities</Link>
-          <Link to={'/events'} className='p-4 text-xl' onClick={() => setMenuOpen(false)}>Events</Link>
-          <Link to={'/staff'} className='p-4 text-xl' onClick={() => setMenuOpen(false)}>Staff</Link>
-          <Link to={'/team'} className='p-4 text-xl' onClick={() => setMenuOpen(false)}>Team</Link>
-          <Link to={'/clubsAndSocities'} className='p-4 text-xl' onClick={() => setMenuOpen(false)}>Clubs</Link>
-          <Link to={'/gallery'} className='p-4 text-xl' onClick={() => setMenuOpen(false)}>Gallery</Link>
-          <Link to={'/contact'} className='p-4 text-xl' onClick={() => setMenuOpen(false)}>Contact</Link>
-        </div>
-      )}
-
       
+
+
+      {/* sidebar */}
+
+      <div 
+        className={`fixed inset-0 bg-black/50 z-[60] transition-opacity duration-300 ${
+          menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setMenuOpen(false)}
+      />
+
+      {/* B. The Sidebar Itself */}
+      <div 
+        className={`fixed top-0 left-0 h-full w-[75%] max-w-sm bg-white shadow-2xl z-[70] transform transition-transform duration-300 ease-in-out ${
+          menuOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
         
+        {/* Sidebar Header */}
+        <div className="flex items-center justify-between p-5 border-b border-gray-100">
+          <span className="font-bold text-teal-700 text-lg">Menu</span>
+          <button 
+            onClick={() => setMenuOpen(false)} 
+            className="text-gray-500 hover:text-red-500 transition-colors p-1"
+          >
+            <FiX className="w-6 h-6" />
+          </button>
+        </div>
+
+        {/* Sidebar Links */}
+        <div className="flex flex-col p-4 space-y-3 overflow-y-auto">
+          {navLinks.map((link, index) => (
+            <Link 
+              key={index}
+              to={`${link.toLowerCase()}`} 
+              onClick={() => setMenuOpen(false)}
+              className="block w-full bg-gray-50 text-gray-700 font-semibold py-3 px-4 rounded-lg hover:bg-teal-50 hover:text-teal-700 transition-all active:scale-98"
+            >
+              {link}
+            </Link>
+          ))}
+        </div>
+      
+        </div>
     </header>
   );
 };
