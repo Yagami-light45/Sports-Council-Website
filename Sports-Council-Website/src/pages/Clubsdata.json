@@ -5,97 +5,142 @@
     "description": "Swimming Pool is open. Entry to the pool will be done on membership basis.",
     "membership": "Membership basis",
     "status": "Open",
-    "action": "Download membership form"
+    "action": "Download membership form",
+    "image": "https://lh3.googleusercontent.com/gg/AMW1TPrr9-Y-T3WS1gG0YUT7Ix1hL5gE3S5F9VIzqx-3WgAyM3izjeBgsTSu-h5rTqSHG_0Jgv64jRw4NiIcVxvNEx0krzDiVyTrHdB53rI-ffIUaeS1GNmxXPjVBN0Spha24Sd50buH3TWssaGSealxJXW9bKzOd9A5hPuFkwM0WMeS10suFmgq=s1024-rj-mp2",
+    "head": { "name": "TBD", "photo": "https://t3.ftcdn.net/jpg/06/33/54/78/360_F_633547842_AugYzexTpMJ9z1YcpTKUBoqBF0CUCk10.jpg" },
+    "members": []
   },
   {
     "id": 2,
     "name": "Athletics",
-    "description": "Promoting physical fitness and healthy competition through running, jumping, and throwing. Open to all skill levels from UG to PhD.",
+    "description": "Welcome to the Athletics Club of IIT Indore, where we promote physical fitness and healthy competition through various athletic activities. Our club provides a platform for students who are interested in running, jumping, throwing, or any other athletic endeavor to come together and pursue their passion. We aim to encourage our members to push their limits, develop their skills, and foster teamwork and sportsmanship. Whether you're a seasoned athlete or just starting out, the Athletics Club of IIT Indore has something for everyone. Join us today to explore your potential and unleash your inner athlete!",
     "membership": "Open to all students",
-    "status": "Active"
+    "status": "Active",
+    "image": "https://lh3.googleusercontent.com/gg/AMW1TPrr9-Y-T3WS1gG0YUT7Ix1hL5gE3S5F9VIzqx-3WgAyM3izjeBgsTSu-h5rTqSHG_0Jgv64jRw4NiIcVxvNEx0krzDiVyTrHdB53rI-ffIUaeS1GNmxXPjVBN0Spha24Sd50buH3TWssaGSealxJXW9bKzOd9A5hPuFkwM0WMeS10suFmgq=s1024-rj-mp2",
+    "head": { "name": "TBD", "photo": "https://t3.ftcdn.net/jpg/06/33/54/78/360_F_633547842_AugYzexTpMJ9z1YcpTKUBoqBF0CUCk10.jpg" },
+    "members": []
   },
   {
     "id": 3,
     "name": "Badminton",
-    "description": "Student-run group focused on regular training sessions, tournaments, and inter-college competitions like Inter IIT.",
+    "description": "The badminton club of our institute is a student-run group dedicated to promote and facilitate the sport of badminton among students. The club offers opportunities for players of all skill levels to come together, play, and compete in a friendly and supportive environment. The club typically organises regular training sessions and tournaments and provides access to equipment and facilities for the club members to practice and play. It also collaborates with other institutes to participate in intercollege competitions and events such as Inter IIT and Ranbhoomi.",
     "membership": "Member access to equipment",
-    "status": "Active"
+    "status": "Active",
+    "image": "https://lh3.googleusercontent.com/gg/AMW1TPrr9-Y-T3WS1gG0YUT7Ix1hL5gE3S5F9VIzqx-3WgAyM3izjeBgsTSu-h5rTqSHG_0Jgv64jRw4NiIcVxvNEx0krzDiVyTrHdB53rI-ffIUaeS1GNmxXPjVBN0Spha24Sd50buH3TWssaGSealxJXW9bKzOd9A5hPuFkwM0WMeS10suFmgq=s1024-rj-mp2",
+    "head": { "name": "TBD", "photo": "https://t3.ftcdn.net/jpg/06/33/54/78/360_F_633547842_AugYzexTpMJ9z1YcpTKUBoqBF0CUCk10.jpg" },
+    "members": []
   },
   {
     "id": 4,
     "name": "Basketball",
-    "description": "Prominent club with active Girls and Boys teams. Welcomes beginners and encourages new talent.",
+    "description": "Basketball Club is one of the prominent sports club in IIT Indore. Both Girls and Boys teams are formed and they actively participate in the events conducted by the club. Club always welcomes new beginners and encourages talent.",
     "membership": "Open to all",
-    "status": "Active"
+    "status": "Active",
+    "image": "https://lh3.googleusercontent.com/gg/AMW1TPrr9-Y-T3WS1gG0YUT7Ix1hL5gE3S5F9VIzqx-3WgAyM3izjeBgsTSu-h5rTqSHG_0Jgv64jRw4NiIcVxvNEx0krzDiVyTrHdB53rI-ffIUaeS1GNmxXPjVBN0Spha24Sd50buH3TWssaGSealxJXW9bKzOd9A5hPuFkwM0WMeS10suFmgq=s1024-rj-mp2",
+    "head": { "name": "TBD", "photo": "https://t3.ftcdn.net/jpg/06/33/54/78/360_F_633547842_AugYzexTpMJ9z1YcpTKUBoqBF0CUCk10.jpg" },
+    "members": []
   },
   {
     "id": 5,
     "name": "Cricket",
-    "description": "Professional level facilities and quality coaching to nourish talent. Participation in professional tournaments.",
+    "description": "IIT Indore facilitates the prospect of having its own cricket club. Our main focus is provide a professional level facilities to the student and have a good culture of cricket among them. To promote the same we take part in various tournaments, matches with professional clubs. Also we have a quality coaching facility which nourish the talent of the individual. Overall one can have a good exposure and experience of playing cricket with us.",
     "membership": "Professional training",
-    "status": "Active"
+    "status": "Active",
+    "image": "https://lh3.googleusercontent.com/gg/AMW1TPrr9-Y-T3WS1gG0YUT7Ix1hL5gE3S5F9VIzqx-3WgAyM3izjeBgsTSu-h5rTqSHG_0Jgv64jRw4NiIcVxvNEx0krzDiVyTrHdB53rI-ffIUaeS1GNmxXPjVBN0Spha24Sd50buH3TWssaGSealxJXW9bKzOd9A5hPuFkwM0WMeS10suFmgq=s1024-rj-mp2",
+    "head": { "name": "TBD", "photo": "https://t3.ftcdn.net/jpg/06/33/54/78/360_F_633547842_AugYzexTpMJ9z1YcpTKUBoqBF0CUCk10.jpg" },
+    "members": []
   },
   {
     "id": 6,
     "name": "Chess",
-    "description": "Focuses on strategic play and mastering objectives like checkmate and avoiding stalemate.",
+    "description": "The primary objective in chess is to checkmate your opponent's King. When a King cannot avoid capture then it is checkmated and the game is immediately over. The game is drawn when the player to move has no legal move and his king is not in check. The game is said to end in 'stalemate'.",
     "membership": "Open to all",
-    "status": "Active"
+    "status": "Active",
+    "image": "https://lh3.googleusercontent.com/gg/AMW1TPrr9-Y-T3WS1gG0YUT7Ix1hL5gE3S5F9VIzqx-3WgAyM3izjeBgsTSu-h5rTqSHG_0Jgv64jRw4NiIcVxvNEx0krzDiVyTrHdB53rI-ffIUaeS1GNmxXPjVBN0Spha24Sd50buH3TWssaGSealxJXW9bKzOd9A5hPuFkwM0WMeS10suFmgq=s1024-rj-mp2",
+    "head": { "name": "TBD", "photo": "https://t3.ftcdn.net/jpg/06/33/54/78/360_F_633547842_AugYzexTpMJ9z1YcpTKUBoqBF0CUCk10.jpg" },
+    "members": []
   },
   {
     "id": 7,
     "name": "Football",
-    "description": "Led by Harsh Wardhan and coached by Mr. Vishal Pillai. High participation across all student levels and faculty.",
+    "description": "Football Club is a very popular sports club at IIT Indore. The club is headed by Harsh Wardhan and is Coached by Mr. Vishal Pillai, an excellent football player and educator. The football club receives active participation from UG, PG, PhD students and Institute Faculty and Staff also. The Men's team actively participates in the events around Indore. The Club always welcomes new beginners and encourages talent.",
     "membership": "Open to all",
-    "status": "Active"
+    "status": "Active",
+    "image": "https://lh3.googleusercontent.com/gg/AMW1TPrr9-Y-T3WS1gG0YUT7Ix1hL5gE3S5F9VIzqx-3WgAyM3izjeBgsTSu-h5rTqSHG_0Jgv64jRw4NiIcVxvNEx0krzDiVyTrHdB53rI-ffIUaeS1GNmxXPjVBN0Spha24Sd50buH3TWssaGSealxJXW9bKzOd9A5hPuFkwM0WMeS10suFmgq=s1024-rj-mp2",
+    "head": { 
+      "name": "Harsh Wardhan", 
+      "photo": "https://via.placeholder.com/150" 
+    },
+    "members": []
   },
   {
     "id": 8,
     "name": "Hockey",
     "description": "Details will be uploaded soon.",
     "membership": "TBD",
-    "status": "Coming Soon"
+    "status": "Coming Soon",
+    "image": "https://lh3.googleusercontent.com/gg/AMW1TPrr9-Y-T3WS1gG0YUT7Ix1hL5gE3S5F9VIzqx-3WgAyM3izjeBgsTSu-h5rTqSHG_0Jgv64jRw4NiIcVxvNEx0krzDiVyTrHdB53rI-ffIUaeS1GNmxXPjVBN0Spha24Sd50buH3TWssaGSealxJXW9bKzOd9A5hPuFkwM0WMeS10suFmgq=s1024-rj-mp2",
+    "head": { "name": "TBD", "photo": "https://t3.ftcdn.net/jpg/06/33/54/78/360_F_633547842_AugYzexTpMJ9z1YcpTKUBoqBF0CUCk10.jpg" },
+    "members": []
   },
   {
     "id": 9,
     "name": "Tennis",
-    "description": "Focuses on developing stamina, speed, agility, and the dynamic balance between body, ball, and racket.",
+    "description": "The objective of our club is to develop the players' stamina, speed, agility and flexibility. The trainings should also help the players develop their racket reaction and coordination. It is also very important to teach the players on the dynamic balance between the body, ball and the racket.",
     "membership": "Skill development",
-    "status": "Active"
+    "status": "Active",
+    "image": "https://lh3.googleusercontent.com/gg/AMW1TPrr9-Y-T3WS1gG0YUT7Ix1hL5gE3S5F9VIzqx-3WgAyM3izjeBgsTSu-h5rTqSHG_0Jgv64jRw4NiIcVxvNEx0krzDiVyTrHdB53rI-ffIUaeS1GNmxXPjVBN0Spha24Sd50buH3TWssaGSealxJXW9bKzOd9A5hPuFkwM0WMeS10suFmgq=s1024-rj-mp2",
+    "head": { "name": "TBD", "photo": "https://t3.ftcdn.net/jpg/06/33/54/78/360_F_633547842_AugYzexTpMJ9z1YcpTKUBoqBF0CUCk10.jpg" },
+    "members": []
   },
   {
     "id": 10,
     "name": "Squash",
     "description": "Details will be uploaded soon.",
     "membership": "TBD",
-    "status": "Coming Soon"
+    "status": "Coming Soon",
+    "image": "https://lh3.googleusercontent.com/gg/AMW1TPrr9-Y-T3WS1gG0YUT7Ix1hL5gE3S5F9VIzqx-3WgAyM3izjeBgsTSu-h5rTqSHG_0Jgv64jRw4NiIcVxvNEx0krzDiVyTrHdB53rI-ffIUaeS1GNmxXPjVBN0Spha24Sd50buH3TWssaGSealxJXW9bKzOd9A5hPuFkwM0WMeS10suFmgq=s1024-rj-mp2",
+    "head": { "name": "TBD", "photo": "https://t3.ftcdn.net/jpg/06/33/54/78/360_F_633547842_AugYzexTpMJ9z1YcpTKUBoqBF0CUCk10.jpg" },
+    "members": []
   },
   {
     "id": 11,
     "name": "Table Tennis",
-    "description": "Inducts players based on exceptional talent and dedication. Offers friendly matches and professional coaching.",
+    "description": "Welcome to the Table Tennis Club of IIT Indore, where we bring together the best players from our institute to promote and develop the sport of table tennis. To ensure that our members have the best possible experience, we induct players who demonstrate exceptional talent, dedication, and sportsmanship. We offer a range of activities and events, including friendly matches, tournaments, and coaching sessions.",
     "membership": "Induction based",
-    "status": "Active"
+    "status": "Active",
+    "image": "https://lh3.googleusercontent.com/gg/AMW1TPrr9-Y-T3WS1gG0YUT7Ix1hL5gE3S5F9VIzqx-3WgAyM3izjeBgsTSu-h5rTqSHG_0Jgv64jRw4NiIcVxvNEx0krzDiVyTrHdB53rI-ffIUaeS1GNmxXPjVBN0Spha24Sd50buH3TWssaGSealxJXW9bKzOd9A5hPuFkwM0WMeS10suFmgq=s1024-rj-mp2",
+    "head": { "name": "TBD", "photo": "https://t3.ftcdn.net/jpg/06/33/54/78/360_F_633547842_AugYzexTpMJ9z1YcpTKUBoqBF0CUCk10.jpg" },
+    "members": []
   },
   {
     "id": 12,
     "name": "Volleyball",
-    "description": "Develops competency in basic skills like forearm pass, overhead pass, attack, and game strategies.",
+    "description": "The club provides knowledge, understanding, and appreciation to the game of volleyball. It also develops satisfactory competency in basic skills such as body posture, forearm pass, serve and serve reception, overhead pass, attack, block, and game situational strategies.",
     "membership": "Skill-based learning",
-    "status": "Active"
+    "status": "Active",
+    "image": "https://lh3.googleusercontent.com/gg/AMW1TPrr9-Y-T3WS1gG0YUT7Ix1hL5gE3S5F9VIzqx-3WgAyM3izjeBgsTSu-h5rTqSHG_0Jgv64jRw4NiIcVxvNEx0krzDiVyTrHdB53rI-ffIUaeS1GNmxXPjVBN0Spha24Sd50buH3TWssaGSealxJXW9bKzOd9A5hPuFkwM0WMeS10suFmgq=s1024-rj-mp2",
+    "head": { "name": "TBD", "photo": "https://t3.ftcdn.net/jpg/06/33/54/78/360_F_633547842_AugYzexTpMJ9z1YcpTKUBoqBF0CUCk10.jpg" },
+    "members": []
   },
   {
     "id": 13,
     "name": "Gym",
-    "description": "Learn techniques for weight-loss, muscle building, and heart health to meet sports performance goals.",
+    "description": "Purpose of the gym is to help you learn new exercises, techniques and training methods to meet your weight-loss, muscle building, heart health or sports performance goals.",
     "membership": "Open access",
-    "status": "Open"
+    "status": "Open",
+    "image": "https://lh3.googleusercontent.com/gg/AMW1TPrr9-Y-T3WS1gG0YUT7Ix1hL5gE3S5F9VIzqx-3WgAyM3izjeBgsTSu-h5rTqSHG_0Jgv64jRw4NiIcVxvNEx0krzDiVyTrHdB53rI-ffIUaeS1GNmxXPjVBN0Spha24Sd50buH3TWssaGSealxJXW9bKzOd9A5hPuFkwM0WMeS10suFmgq=s1024-rj-mp2",
+    "head": { "name": "TBD", "photo": "https://t3.ftcdn.net/jpg/06/33/54/78/360_F_633547842_AugYzexTpMJ9z1YcpTKUBoqBF0CUCk10.jpg" },
+    "members": []
   },
   {
     "id": 14,
     "name": "Yoga",
-    "description": "Aims for physical health, mental hygiene, emotional stability, and higher levels of consciousness.",
+    "description": "Aims and objectives of Yoga Club: To enable the student to have good health, to practice mental hygiene, to possess emotional stability, to integrate moral values, and to attain higher level of consciousness.",
     "membership": "Open to all",
-    "status": "Active"
+    "status": "Active",
+    "image": "https://lh3.googleusercontent.com/gg/AMW1TPrr9-Y-T3WS1gG0YUT7Ix1hL5gE3S5F9VIzqx-3WgAyM3izjeBgsTSu-h5rTqSHG_0Jgv64jRw4NiIcVxvNEx0krzDiVyTrHdB53rI-ffIUaeS1GNmxXPjVBN0Spha24Sd50buH3TWssaGSealxJXW9bKzOd9A5hPuFkwM0WMeS10suFmgq=s1024-rj-mp2",
+    "head": { "name": "TBD", "photo": "https://t3.ftcdn.net/jpg/06/33/54/78/360_F_633547842_AugYzexTpMJ9z1YcpTKUBoqBF0CUCk10.jpg" },
+    "members": []
   }
 ]

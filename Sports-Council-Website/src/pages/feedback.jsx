@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import clubs from './Clubsdata.json';
 
 export default function Feedback() {
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
@@ -29,89 +30,118 @@ export default function Feedback() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-[80vh] bg-gray-50 py-12 px-4 font-poppins">
-      <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+    <div className="relative min-h-screen bg-white font-poppins selection:bg-[#00a896] selection:text-white overflow-hidden flex items-center justify-center py-20 px-4">
+      
+      {/* 🔹 DECORATIVE BACKGROUND BLUR (Matches Team Page) */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#00a896] opacity-10 blur-[100px] rounded-full pointer-events-none"></div>
+
+      <div className="relative z-10 w-full max-w-lg">
         
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-800">Feedback Form</h2>
-          <p className="text-gray-500 mt-2">Data will be saved to Excel and emailed to Admin.</p>
+        {/* 🔹 HEADER SECTION */}
+        <div className="text-center mb-10">
+            <span className="text-[#00a896] text-xs font-black uppercase tracking-[0.3em] block mb-3">
+              We Value Your Voice
+            </span>
+            <h1 className="text-4xl md:text-5xl font-black text-[#1a1c24] leading-none mb-4 tracking-tight">
+              Feedback <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00a896] to-[#017a6c]">Form</span>
+            </h1>
+            <div className="w-16 h-1.5 bg-[#1a1c24] mx-auto rounded-full"></div>
         </div>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-          {/* Name Field */}
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">Full Name</label>
-            <input 
-              type="text" 
-              name="name" 
-              placeholder="Enter your name" 
-              required
-              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200"
-            />
-          </div>
+        {/* 🔹 FORM CARD */}
+        <div className="bg-white rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100 p-8 md:p-10 relative">
+          
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+            
+            {/* Name Field */}
+            <div className="group">
+              <label className="block text-xs font-bold text-[#1a1c24] mb-2 uppercase tracking-widest group-focus-within:text-[#00a896] transition-colors">
+                Full Name
+              </label>
+              <input 
+                type="text" 
+                name="name" 
+                placeholder="Enter your name" 
+                required
+                className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-100 text-[#1a1c24] placeholder-gray-400 font-medium focus:bg-white focus:border-[#00a896] focus:ring-4 focus:ring-[#00a896]/10 outline-none transition-all duration-300"
+              />
+            </div>
 
-          {/* Sport Selection */}
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">Select Sport</label>
-            <select 
-              name="sport"
-              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200"
+            {/* Sport Selection */}
+            <div className="group">
+              <label className="block text-xs font-bold text-[#1a1c24] mb-2 uppercase tracking-widest group-focus-within:text-[#00a896] transition-colors">
+                Select Sport
+              </label>
+              <div className="relative">
+                <select 
+                  name="sport"
+                  className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-100 text-[#1a1c24] font-medium focus:bg-white focus:border-[#00a896] focus:ring-4 focus:ring-[#00a896]/10 outline-none transition-all duration-300 appearance-none cursor-pointer"
+                >
+                  {clubs.map((club, index) => (
+                    <option value={club.name} key={index}>{club.name}</option>
+                  ))}
+                </select>
+                {/* Custom Arrow Icon */}
+                <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+              </div>
+            </div>
+
+            {/* Summary Field */}
+            <div className="group">
+              <label className="block text-xs font-bold text-[#1a1c24] mb-2 uppercase tracking-widest group-focus-within:text-[#00a896] transition-colors">
+                Short Summary
+              </label>
+              <input 
+                type="text" 
+                name="summary" 
+                placeholder="One line description" 
+                required
+                className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-100 text-[#1a1c24] placeholder-gray-400 font-medium focus:bg-white focus:border-[#00a896] focus:ring-4 focus:ring-[#00a896]/10 outline-none transition-all duration-300"
+              />
+            </div>
+
+            {/* Details Field */}
+            <div className="group">
+              <label className="block text-xs font-bold text-[#1a1c24] mb-2 uppercase tracking-widest group-focus-within:text-[#00a896] transition-colors">
+                Detailed Description
+              </label>
+              <textarea 
+                name="details" 
+                rows="4"
+                placeholder="Tell us more about your experience..." 
+                className="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-100 text-[#1a1c24] placeholder-gray-400 font-medium focus:bg-white focus:border-[#00a896] focus:ring-4 focus:ring-[#00a896]/10 outline-none transition-all duration-300 resize-none"
+              ></textarea>
+            </div>
+
+            {/* Submit Button */}
+            <button 
+              type="submit" 
+              disabled={status === 'loading'}
+              className={`w-full font-black py-4 rounded-full shadow-lg transition-all duration-300 transform uppercase tracking-[0.2em] text-xs mt-2
+                ${status === 'loading' 
+                  ? 'bg-gray-200 cursor-not-allowed text-gray-400 shadow-none' 
+                  : 'bg-[#1a1c24] hover:bg-[#00a896] text-white hover:shadow-[#00a896]/30 hover:-translate-y-1 active:scale-95'}`}
             >
-              <option value="football">Football</option>
-              <option value="basketball">Basketball</option>
-              <option value="cricket">Cricket</option>
-              <option value="badminton">Badminton</option>
-            </select>
-          </div>
+              {status === 'loading' ? 'Sending...' : 'Submit Feedback'}
+            </button>
 
-          {/* Summary Field */}
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">Short Summary</label>
-            <input 
-              type="text" 
-              name="summary" 
-              placeholder="One line description" 
-              required
-              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200"
-            />
-          </div>
-
-          {/* Details Field */}
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">Detailed Description</label>
-            <textarea 
-              name="details" 
-              rows="4"
-              placeholder="Tell us more..." 
-              className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 focus:border-blue-400 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200 resize-none"
-            ></textarea>
-          </div>
-
-          {/* Submit Button */}
-          <button 
-            type="submit" 
-            disabled={status === 'loading'}
-            className={`w-full font-bold py-3 rounded-lg shadow-lg transition-all duration-300 transform 
-              ${status === 'loading' 
-                ? 'bg-gray-400 cursor-not-allowed' 
-                : 'bg-blue-500 hover:bg-blue-600 text-white hover:-translate-y-1 active:scale-95'}`}
-          >
-            {status === 'loading' ? 'Submitting...' : 'Submit to Admin'}
-          </button>
-
-          {/* Success/Error Feedback */}
-          {status === 'success' && (
-            <div className="p-3 bg-green-100 text-green-700 rounded-lg text-center font-medium animate-pulse">
-              ✓ Successfully saved to Sheet & Email sent!
-            </div>
-          )}
-          {status === 'error' && (
-            <div className="p-3 bg-red-100 text-red-700 rounded-lg text-center font-medium">
-              × Failed to send. Please check your connection.
-            </div>
-          )}
-        </form>
+            {/* Success/Error Feedback */}
+            {status === 'success' && (
+              <div className="p-4 bg-[#f0fdfa] text-[#00a896] border border-[#00a896]/20 rounded-xl text-center text-sm font-bold flex items-center justify-center gap-2 animate-bounce">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                Message Sent Successfully!
+              </div>
+            )}
+            {status === 'error' && (
+              <div className="p-4 bg-red-50 text-red-600 border border-red-100 rounded-xl text-center text-sm font-bold flex items-center justify-center gap-2">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                Failed to send. Please check connectivity.
+              </div>
+            )}
+          </form>
+        </div>
       </div>
     </div>
   );
