@@ -71,7 +71,7 @@ export default function Team() {
     : [];
 
   return (
-    <div className="pt-28 pb-20 min-h-screen font-poppins bg-white selection:bg-[#00a896] selection:text-white">
+    <div className="pt-5 pb-20 min-h-screen font-poppins bg-white selection:bg-[#00a896] selection:text-white">
       <div className="w-full max-w-7xl mx-auto px-4 md:px-10 flex flex-col items-center">
         
         {/* HEADER */}

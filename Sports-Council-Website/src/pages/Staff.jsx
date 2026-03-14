@@ -20,7 +20,7 @@ export default function Staff() {
     ];
 
     return (
-        <div className="bg-white min-h-screen w-full pt-28 pb-20 px-4 font-poppins selection:bg-[#00a896] selection:text-white">
+        <div className="bg-white min-h-screen w-full pt-5 pb-20 px-4 font-poppins selection:bg-[#00a896] selection:text-white">
             <div className="max-w-[1400px] mx-auto">
                 
                 {/* 🔹 HEADER SECTION (Styled) */}

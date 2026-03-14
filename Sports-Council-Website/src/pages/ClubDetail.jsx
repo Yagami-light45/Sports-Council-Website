@@ -8,7 +8,7 @@ export default function ClubDetail() {
 
   if (!club)
     return (
-      <div className="pt-24 pb-10 text-center font-poppins">
+      <div className="pt-5 pb-10 text-center font-poppins">
         <h2 className="text-2xl font-bold text-[#1a1c24]">Club not found!</h2>
       </div>
     );

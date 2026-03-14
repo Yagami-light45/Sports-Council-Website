@@ -6,7 +6,7 @@ export default function ClubsGallery() {
   return (
     /* pt-28 ensures content starts below the fixed navbar.
        min-h-screen keeps the footer at the bottom. */
-    <div className="bg-white min-h-screen pt-28 pb-16 px-6 md:px-12 font-poppins">
+    <div className="bg-white min-h-screen pt-5 pb-16 px-6 md:px-12 font-poppins">
       {/* Header Section */}
       <div className="text-center mb-16">
         <h1 className="text-5xl md:text-6xl font-black text-[#1a1c24] mb-4 tracking-tight">
