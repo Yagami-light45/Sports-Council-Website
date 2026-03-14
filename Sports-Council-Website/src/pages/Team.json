@@ -1,3 +1,4 @@
+
 [
   {
     "name": "Aayush Yadav",
@@ -14,8 +15,8 @@
     "Team": "OPnL",
     "role": "Co-Head",
     "img": "https://drive.google.com/uc?export=view&id=18LThODPeL39rq4Dw4byGG8TIyxnMAW1o",
-    "Instagram Profile link": null,
-    "Linkedin Profile link": null
+    "Instagram Profile link": "https://www.instagram.com/siddha_rtha_raavi?igsh=MXhtZjdxMHcxNjk3aA%3D%3D&utm_source=qr",
+    "Linkedin Profile link": "https://www.linkedin.com/in/raavi-chandra-siddhartha-6b40b6368?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
   },
   {
     "name": "Rida Samrin",
@@ -277,5 +278,14 @@
     "img": "https://drive.google.com/uc?export=view&id=1aHnnPDp3CHU7iZ7DgjETb4J0sU4pjknP",
     "Instagram Profile link": "https://www.instagram.com/tanushpratapchand",
     "Linkedin Profile link": "https://www.linkedin.com/in/tanush-chand-909927377"
+  },
+   {
+    "name": "Harshith P",
+    "Roll Number": 240003034,
+    "Team": "Web Dev",
+    "role": "Co-Head",
+    "img": "https://drive.google.com/uc?export=download&id=13hzHu-c2Nz8XIPLUcgAyQsgzQBXhzrLM",
+    "Instagram Profile link": "https://www.instagram.com/accounts/login/?next=%2Fitx_harshith_p%2F&source=omni_redirect&hl=en",
+    "Linkedin Profile link": "https://www.linkedin.com/in/harshith-pasupuleti/"
   }
 ]

@@ -9,7 +9,7 @@ export default function Members({ title, Subtitle, img, email, phone }) {
       <div className="flex justify-items-center gap-[2.5rem] m-[3rem]">
         <div
           className="w-[30rem] h-full bg-white rounded-xl shadow-md
-                      flex flex-col items-center p-4 gap-3
+                      flex flex-col items-center p-4 gap-2
                       transition-transform hover:-translate-y-2 hover:shadow-xl"
         >
           {/* Image box */}
